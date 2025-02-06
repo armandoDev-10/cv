@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Armando</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+</head>
+<style>
+  *{
+  color: whitesmoke;
+  font-family: Ubuntu;
+}
+main{
+  background: linear-gradient(rgb(0,0,255),rgb(0,0,170));
+  min-width: 100%;
+  min-height: 100%;
+  padding: 25px;
+}
+main #Info{
+  width: 100%;
+  min-height: 95vh;
+  display: flex;
+  gap: 10px;
+}
+main .info{
+  width: 25%;
+  min-height: 95vh;
+  background-color: rgb(255,255,255, 0.2);
+  border-radius: 25px;
+  padding: 5px;
+}
+.foto{
+  width: 80%;
+  margin: auto;
+}
+.foto img{
+  width: 100%;
+  border-radius: 25px;
+}
+.nombre{
+  text-align: center;
+}
+.nombre p{
+  font-style: italic;
+  color: #56070c;
+  font-weight: bold;
+}
+.contacto .contenido{
+  padding: 15px;
+  font-size: 50px;
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+}
+.contacto .item a{
+  text-decoration: none;
+}
+
+main .acerca p{
+  text-align: justify;
+}
+
+main .habilidades{
+  width: 25%;
+  min-height: 95vh;
+  background-color: rgb(255,255,255, 0.2);
+  border-radius: 25px;
+  padding: 15px;
+}
+main .escolaridad{
+  width: 50%;
+  min-height: 95vh;
+  background-color: rgb(255,255,255, 0.2);
+  border-radius: 25px;
+  padding: 5px;
+}
+.escolaridad .item{
+  display: flex;
+  gap: 10px;
+  text-align: center;
+}
+.escolaridad .item .boxinfo{
+  width: 50%;
+}
+.boton{
+  position: relative;
+  top: 100px;
+}
+
+main #campo_laboral{
+  width: 50%;
+  padding: 25px;
+  margin-top: 10px;
+  min-height: 80vh;
+  background-color: rgb(255,255,255, 0.2);
+  border-radius: 25px;
+  
+}
+#campo_laboral .item{
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  text-align: center;
+}
+
+footer{
+  text-align: center;
+}
+
+@media (max-width:1080px){
+  main{
+    padding: 10px;
+  }
+  main #Info{
+    flex-direction: column;
+  }
+  .foto{
+    width: 35%;
+    margin: auto;
+  }
+  main .info{
+    width: 100%;
+    min-height: 0;
+    padding: 10px;
+  }
+  main .habilidades{
+    width: 100%;
+    min-height: 0;
+    padding: 10px;
+  }
+  main .escolaridad{
+    width: 100%;
+    min-height: 0;
+    padding: 10px;
+  }
+  .boton{
+    display: none;
+  }
+  main #campo_laboral{
+    width: 100%;
+    min-height: 0;
+    padding: 10px;
+  }
+  #campo_laboral .item{
+    flex-direction: column;
+  }
+  #campo_laboral .item .boxinfo{
+    width: 100%;
+  }
+}
+
+@media (max-width:600px){
+  .foto{
+    width: 50%;
+  }
+  .escolaridad .item{
+    flex-direction: column;
+  }
+  .escolaridad .item .boxinfo{
+    width: 100%;
+  }
+}
+</style>
+<body>
+  
+  <main class="">
+    <section id="Info">
+        <section class="info">
+          <article class="nombre">
+            <h3>Jesús Armando Hernandez Acuña</h3>
+            <p>Economista y programador</p>
+          </article>
+          <hr>
+          <article class="foto">
+            <img src="https://i.ibb.co/LXdPt9g0/imagen.jpg" alt="">
+          </article>
+          <hr>
+          <article class="contacto">
+            <h5>Contacto</h5>
+            <hr>
+            <section class="contenido">
+              <article class="item">
+                <a href="https://wa.me/5517726616?text=Hola%20Armando%20vengo%20desde%20tu%20CV" target="_blank"><i class="fa-brands fa-whatsapp" style="color: #63E6BE;"></i></a>
+              </article>
+              <article class="item">
+                <a href="mailto:hernandezacunaarmando@gmail.com" target="_blank"><i class="fa-solid fa-envelope" style="color:#56070c"></i></a>
+              </article>
+              <article class="item">
+                <a href="https://github.com/armandoDev-10" target="_blank"><i class="fa-brands fa-github"></i></a>
+              </article>
+            </section>
+          </article>
+      </section>
+
+      <section class="habilidades">
+        <article class="acerca">
+          <h5>Acerca de mi</h5>
+          <hr>
+          <p>Hola que tal, actualmente soy estudiante de 9° semestre de la licenciatura en economía en el IPN, y tambien tengo buen conocimiento en programación, principalmente python para el analisis y visualización de datos, asi como desarrollo web con Django.</p>
+          <p>
+            Me gusta describirme como una persona disciplinada, trabajadora y autodidacta, mi objetivo principal es entrar en el campo laboral para poder desarrollar mis habilidades profecionales en situaciones y retos de la vida real.
+          </p>
+        </article>
+
+        <article class="contenido">
+          <h5>Habilidades</h5>
+          <hr>
+          <article class="item">
+            <p>Software de oficina</p>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+            </div>
+          </article>
+          <article class="item">
+            <p>Python</p>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+            </div>
+          </article>
+          <article class="item">
+            <p>Django</p>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+            </div>
+          </article>
+          <article class="item">
+            <p>HTML</p>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+            </div>
+          </article>
+          <article class="item">
+            <p>CSS</p>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+            </div>
+          </article>
+        </article>
+      </section>
+
+      <section class="escolaridad">
+        <h5>Escolaridad</h5>
+        <hr>
+        <article class="item">
+          <article class="boxinfo">
+            <h5>Medio superior</h5>
+            <p>2013 - 2016</p>
+          </article>
+          <article>
+            <h5>
+              INSTITUTO DE EDUCACION MEDIO SUPERIOR (IEMS)
+            </h5>
+            <P>"José María Morelos y Pavón"</P>
+          </article>
+        </article>
+        <hr>
+        <article class="item">
+          <article class="boxinfo">
+            <h5>Superior</h5>
+            <p>2016 - Actualidad</p>
+          </article>
+          <article>
+            <h5>
+              ESCUELA SUPERIOR DE ECONOMÍA
+            </h5>
+            <P>IPN</P>
+          </article>
+        </article>
+        <hr>
+        <h5>Diplomas</h5>
+        <hr>
+        <article class="item">
+          <article class="boxinfo">
+            <h5>Escula de código PILARES CDMX</h5>
+            <p>Julio 2023</p>
+          </article>
+          <article>
+            <h5>Python (Taller)</h5>
+          </article>
+        </article>
+        <hr>
+        <article class="item">
+          <article class="boxinfo">
+            <h5>META</h5>
+            <p>Agosto 2023</p>
+          </article>
+          <article>
+            <h5>Competencias en Programación con Python</h5>
+          </article>
+        </article>
+
+        <article class="boton">
+          <a href="#campo_laboral" class="btn btn-success btn-lg w-100">Experiencia laboral</a>
+        </article>
+      </section>
+    </section>
+
+    <section id="campo_laboral">
+      <h5>Experiencia Laboral</h5>
+      <hr>
+
+      <article class="item">
+        <article class="boxinfo">
+          <h5>ALCALDIA TLAHUAC</h5>
+          <p>Noviembre 2022 / Enero 2023</p>
+        </article>
+        <article>
+          <p>Actividades administrativas en el campamento No.1 seccion talleres, promoción de empleo temporal por la secretaría del trabajo.</p>
+        </article>
+      </article>
+      <hr>
+      <article class="item">
+        <article class="boxinfo">
+          <h5>Dirección general de ingenieros (SEDENA)</h5>
+          <p>Abril 2023 / Mayo 2023</p>
+        </article>
+        <article>
+          <p>Desarrolle actividades en el area de proyectos de inversión, en donde principalmente me encomendaron la tarea de desarrollar una aplicación web para la gestion del archivo digital de los proyectos activos ó en planeación.</p>
+        </article>
+      </article>
+      <hr>
+      <article class="item">
+        <article class="boxinfo">
+          <h5>Pasteleria "Sury"</h5>
+          <p>Abril 2020 / Actualidad</p>
+        </article>
+        <article>
+          <p>He desempeñado labores de pastelero, tales como, elaboración de pan y postres artesanales, asi como el diseño y decoración de distintos pasteles, tambien he desempeñado labores administrativas tales como la gestion de inventarios y control de mermas.</p>
+        </article>
+      </article>
+    </section>
+
+    <hr>
+
+    <footer>
+      <p>© ArmandoTech</p>
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+  <script src="https://kit.fontawesome.com/166ceef56d.js" crossorigin="anonymous"></script>
+</body>
+</html>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
