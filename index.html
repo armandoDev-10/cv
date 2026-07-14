@@ -4,692 +4,81 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jesús Armando Hernández · CV Magazine</title>
-
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
     <style>
-        /* ============================================================
-           ROOT - Paleta Corporativo Premium (A)
-           ============================================================ */
-        :root {
-            --bg-primary: #f8fafc;
-            --bg-secondary: #ffffff;
-            --bg-dark: #0f172a;
-            --bg-dark-secondary: #1e293b;
-            --accent-primary: #0f172a;
-            --accent-secondary: #3b82f6;
-            --accent-gold: #d4a574;
-            --accent-gold-light: #f5e6d3;
-            --text-primary: #0f172a;
-            --text-secondary: #334155;
-            --text-muted: #64748b;
-            --text-light: #f8fafc;
-            --border-color: #e2e8f0;
-            --shadow: 0 8px 32px rgba(15, 23, 42, 0.08);
-            --radius: 12px;
-            --transition: 0.3s ease;
-            --font-serif: 'Playfair Display', 'Times New Roman', serif;
-            --font-sans: 'Inter', -apple-system, sans-serif;
-            --font-serif-body: 'Source Serif Pro', 'Georgia', serif;
-        }
-
-        /* ============================================================
-           RESET & BASE
-           ============================================================ */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: var(--font-sans);
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            min-height: 100vh;
-            padding: 24px;
-            opacity: 0;
-            transition: opacity 0.8s ease;
-        }
-
-        body.loaded { opacity: 1; }
-
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: var(--bg-primary); }
-        ::-webkit-scrollbar-thumb { background: var(--accent-secondary); border-radius: 10px; }
-
-        /* ============================================================
-           CONTAINER
-           ============================================================ */
-        .cv-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: var(--bg-secondary);
-            border-radius: 16px;
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-        }
-
-        /* ============================================================
-           MAGAZINE COVER
-           ============================================================ */
-        .magazine-cover {
-            background: var(--bg-dark);
-            color: var(--text-light);
-            padding: 3rem 3rem 2rem;
-            position: relative;
-            overflow: hidden;
-            min-height: 280px;
-            display: flex;
-            align-items: center;
-        }
-
-        .magazine-cover::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.06), transparent 70%);
-            pointer-events: none;
-        }
-
-        .magazine-cover .cover-content {
-            position: relative;
-            z-index: 2;
-            flex: 1;
-        }
-
-        .magazine-cover .cover-badge {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--accent-gold);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .magazine-cover .cover-title {
-            font-family: var(--font-serif);
-            font-size: 3rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 0.3rem;
-            letter-spacing: -0.02em;
-        }
-
-        .magazine-cover .cover-title .highlight {
-            color: var(--accent-gold);
-            font-style: italic;
-        }
-
-        .magazine-cover .cover-subtitle {
-            font-size: 1.1rem;
-            font-weight: 300;
-            color: rgba(255, 255, 255, 0.7);
-            font-family: var(--font-serif-body);
-            font-style: italic;
-        }
-
-        .magazine-cover .cover-meta {
-            display: flex;
-            gap: 2rem;
-            margin-top: 1.2rem;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: rgba(255, 255, 255, 0.5);
-            flex-wrap: wrap;
-        }
-
-        .magazine-cover .cover-meta span i {
-            margin-right: 0.4rem;
-            color: var(--accent-gold);
-        }
-
-        .cover-photo {
-            position: relative;
-            z-index: 2;
-            margin-left: 2rem;
-            flex-shrink: 0;
-        }
-
-        .cover-photo img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--accent-gold);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        /* ============================================================
-           MAGAZINE BODY
-           ============================================================ */
-        .magazine-body {
-            padding: 2.5rem 3rem;
-        }
-
-        /* ============================================================
-           PULL QUOTE
-           ============================================================ */
-        .pull-quote {
-            font-family: var(--font-serif);
-            font-size: 1.2rem;
-            font-style: italic;
-            color: var(--accent-primary);
-            border-left: 4px solid var(--accent-gold);
-            padding-left: 1.5rem;
-            margin: 1.5rem 0;
-            line-height: 1.6;
-            background: var(--bg-primary);
-            padding: 1.2rem 1.8rem;
-            border-radius: 0 var(--radius) var(--radius) 0;
-        }
-
-        .pull-quote .attribution {
-            display: block;
-            font-family: var(--font-sans);
-            font-size: 0.7rem;
-            font-style: normal;
-            font-weight: 600;
-            color: var(--text-muted);
-            margin-top: 0.3rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* ============================================================
-           SECTION TITLES
-           ============================================================ */
-        .section-title-mag {
-            font-family: var(--font-serif);
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--accent-primary);
-            margin-bottom: 1.2rem;
-            letter-spacing: -0.01em;
-            border-bottom: 2px solid var(--accent-gold-light);
-            padding-bottom: 0.4rem;
-            display: inline-block;
-        }
-
-        .section-title-mag i {
-            color: var(--accent-gold);
-            margin-right: 0.5rem;
-            font-size: 1rem;
-        }
-
-        /* ============================================================
-           TWO-COLUMN GRID
-           ============================================================ */
-        .editorial-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .editorial-grid .full-width {
-            grid-column: 1 / -1;
-        }
-
-        /* ============================================================
-           TIMELINE
-           ============================================================ */
-        .mag-timeline-item {
-            padding-bottom: 1.2rem;
-            margin-bottom: 1.2rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .mag-timeline-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-
-        .mag-timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .mag-timeline-title {
-            font-weight: 700;
-            font-size: 1rem;
-            color: var(--accent-primary);
-        }
-
-        .mag-timeline-sub {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-
-        .mag-timeline-date {
-            font-size: 0.65rem;
-            font-weight: 600;
-            color: var(--accent-secondary);
-            background: rgba(59, 130, 246, 0.06);
-            padding: 0.15rem 0.7rem;
-            border-radius: 20px;
-            white-space: nowrap;
-        }
-
-        .mag-timeline-desc {
-            font-family: var(--font-serif-body);
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .mag-timeline-desc ul {
-            padding-left: 1.2rem;
-            margin: 0.1rem 0;
-        }
-
-        .mag-timeline-desc li { margin-bottom: 0.1rem; }
-
-        /* ============================================================
-           SKILLS
-           ============================================================ */
-        .mag-skill-group {
-            margin-bottom: 0.8rem;
-        }
-
-        .mag-skill-group .label {
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            color: var(--text-muted);
-            display: block;
-            margin-bottom: 0.2rem;
-        }
-
-        .mag-skill-group .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.3rem;
-        }
-
-        .mag-tag {
-            background: var(--bg-primary);
-            border: 1px solid var(--border-color);
-            padding: 0.15rem 0.7rem;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            transition: all var(--transition);
-        }
-
-        .mag-tag:hover {
-            border-color: var(--accent-secondary);
-            color: var(--accent-secondary);
-        }
-
-        /* ============================================================
-           PROJECTS
-           ============================================================ */
-        .mag-project {
-            padding: 0.8rem 1rem;
-            border-left: 3px solid var(--accent-gold-light);
-            margin-bottom: 1rem;
-            transition: all var(--transition);
-        }
-
-        .mag-project:hover {
-            border-left-color: var(--accent-gold);
-            background: var(--bg-primary);
-            border-radius: 0 var(--radius) var(--radius) 0;
-        }
-
-        .mag-project:last-child { margin-bottom: 0; }
-
-        .mag-project .title {
-            font-weight: 700;
-            font-size: 0.95rem;
-            color: var(--accent-primary);
-        }
-
-        .mag-project .sub {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-
-        .mag-project .desc {
-            font-family: var(--font-serif-body);
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-            margin-top: 0.2rem;
-        }
-
-        .mag-project .techs { margin-top: 0.3rem; }
-        .mag-project .techs .mag-tag { font-size: 0.6rem; }
-
-        .mag-project .link {
-            display: inline-block;
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: var(--accent-secondary);
-            text-decoration: none;
-            margin-top: 0.3rem;
-            transition: all var(--transition);
-        }
-
-        .mag-project .link:hover {
-            color: var(--accent-primary);
-            transform: translateX(4px);
-        }
-
-        /* ============================================================
-           CONTACT
-           ============================================================ */
-        .mag-contact {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 0.5rem;
-        }
-
-        .mag-contact a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.8rem;
-            transition: all var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .mag-contact a:hover {
-            color: var(--accent-secondary);
-        }
-
-        /* ============================================================
-           TABLA DE CONTACTO PARA IMPRESIÓN
-           ============================================================ */
-        .print-contact-table {
-            display: none;
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 0.8rem;
-            font-size: 0.8rem;
-        }
-
-        .print-contact-table td {
-            padding: 0.4rem 0.6rem;
-            border-bottom: 1px solid #e2e8f0;
-            color: #0f172a;
-        }
-
-        .print-contact-table .label {
-            font-weight: 600;
-            color: #0f172a;
-            width: 40%;
-        }
-
-        .print-contact-table .value {
-            color: #334155;
-        }
-
-        /* ============================================================
-           BUTTONS
-           ============================================================ */
-        .btn-pdf-mag {
-            background: var(--accent-primary);
-            border: none;
-            border-radius: 30px;
-            padding: 0.5rem 1.5rem;
-            font-weight: 600;
-            font-size: 0.75rem;
-            color: #fff;
-            transition: all var(--transition);
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: var(--font-sans);
-            border: 1px solid transparent;
-        }
-
-        .btn-pdf-mag:hover {
-            background: var(--bg-dark-secondary);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
-            color: #fff;
-        }
-
-        .btn-outline-mag {
-            background: transparent;
-            border: 1px solid var(--border-color);
-            border-radius: 30px;
-            padding: 0.5rem 1.5rem;
-            font-weight: 500;
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            transition: all var(--transition);
-            cursor: pointer;
-            font-family: var(--font-sans);
-        }
-
-        .btn-outline-mag:hover {
-            border-color: var(--accent-primary);
-            color: var(--accent-primary);
-            background: var(--bg-primary);
-        }
-
-        /* ============================================================
-           FOOTER
-           ============================================================ */
-        .mag-footer {
-            background: var(--bg-dark);
-            color: rgba(255, 255, 255, 0.4);
-            text-align: center;
-            padding: 1.5rem;
-            font-size: 0.7rem;
-            letter-spacing: 0.05em;
-        }
-
-        .mag-footer a {
-            color: var(--accent-gold);
-            text-decoration: none;
-        }
-
-        /* ============================================================
-           PRINT-ONLY
-           ============================================================ */
-        .print-only { display: none !important; }
-
-        /* ============================================================
-           RESPONSIVE
-           ============================================================ */
-        @media (max-width: 992px) {
-            .magazine-cover { flex-direction: column-reverse; text-align: center; padding: 2rem 1.5rem; }
-            .cover-photo { margin-left: 0; margin-bottom: 1rem; }
-            .cover-photo img { width: 120px; height: 120px; }
-            .magazine-cover .cover-title { font-size: 2.2rem; }
-            .editorial-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-            .magazine-body { padding: 1.5rem; }
-            .magazine-cover .cover-meta { justify-content: center; }
-        }
-
-        @media (max-width: 576px) {
-            body { padding: 12px; }
-            .magazine-cover .cover-title { font-size: 1.8rem; }
-            .magazine-cover { padding: 1.5rem 1rem; min-height: auto; }
-            .magazine-body { padding: 1rem; }
-            .cover-photo img { width: 100px; height: 100px; }
-            .pull-quote { font-size: 1rem; padding: 0.8rem 1.2rem; }
-            .mag-timeline-header { flex-direction: column; }
-            .mag-timeline-date { white-space: normal; }
-        }
-
-        /* ============================================================
-           PRINT
-           ============================================================ */
-        @media print {
-            body {
-                background: #fff !important;
-                padding: 0 !important;
-                opacity: 1 !important;
-            }
-
-            .cv-container {
-                border-radius: 0 !important;
-                box-shadow: none !important;
-                border: none !important;
-            }
-
-            .magazine-cover {
-                background: #0f172a !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-                padding: 2rem 2.5rem !important;
-            }
-
-            .magazine-cover .cover-title {
-                color: #fff !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-
-            .magazine-cover .cover-subtitle {
-                color: rgba(255, 255, 255, 0.7) !important;
-            }
-
-            .magazine-cover .cover-meta {
-                color: rgba(255, 255, 255, 0.5) !important;
-            }
-
-            .magazine-cover .cover-badge {
-                color: #d4a574 !important;
-            }
-
-            .cover-photo img {
-                border-color: #d4a574 !important;
-            }
-
-            .pull-quote {
-                background: #f8fafc !important;
-                border-left-color: #d4a574 !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-
-            .btn-pdf-mag,
-            .btn-outline-mag,
-            .no-print {
-                display: none !important;
-            }
-
-            .print-only {
-                display: block !important;
-            }
-
-            /* Mostrar tabla de contacto en impresión */
-            .print-contact-table {
-                display: table !important;
-            }
-
-            .mag-contact {
-                display: none !important;
-            }
-
-            .mag-tag {
-                border: 1px solid #ccc !important;
-                background: #f5f5f5 !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-
-            .section-title-mag {
-                border-bottom-color: #d4a574 !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-
-            .mag-project {
-                border-left-color: #d4a574 !important;
-            }
-
-            .mag-project:hover {
-                background: transparent !important;
-            }
-
-            .mag-timeline-date {
-                background: rgba(59, 130, 246, 0.06) !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-
-            .mag-skill-group .label {
-                color: #0f172a !important;
-            }
-
-            .mag-footer {
-                background: #0f172a !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-
-            .mag-footer a {
-                color: #d4a574 !important;
-            }
-
-            .magazine-body {
-                padding: 1.5rem 2.5rem !important;
-            }
-
-            /* Ajustar tamaños de fuente para impresión */
-            .mag-timeline-desc {
-                font-size: 0.8rem !important;
-            }
-
-            .mag-timeline-title {
-                font-size: 0.95rem !important;
-            }
-
-            .mag-project .title {
-                font-size: 0.9rem !important;
-            }
-
-            .mag-project .desc {
-                font-size: 0.75rem !important;
-            }
-
-            .section-title-mag {
-                font-size: 1.2rem !important;
-            }
-
-            /* Asegurar que la tabla de contacto se vea bien */
-            .print-contact-table td {
-                padding: 0.3rem 0.5rem !important;
-                border-bottom: 1px solid #ddd !important;
-                font-size: 0.75rem !important;
-            }
-
-            .print-contact-table .label {
-                font-weight: 600 !important;
-                width: 35% !important;
-            }
-        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',-apple-system,sans-serif;background:#f8fafc;color:#0f172a;min-height:100vh;padding:24px;opacity:0;transition:opacity .8s ease}
+        body.loaded{opacity:1}
+        ::-webkit-scrollbar{width:5px}
+        ::-webkit-scrollbar-track{background:#f8fafc}
+        ::-webkit-scrollbar-thumb{background:#3b82f6;border-radius:10px}
+        .cv-container{max-width:1200px;margin:0 auto;background:#fff;border-radius:16px;box-shadow:0 8px 32px rgba(15,23,42,.08);overflow:hidden;border:1px solid #e2e8f0}
+        .magazine-cover{background:#0f172a;color:#f8fafc;padding:3rem 3rem 2rem;position:relative;overflow:hidden;min-height:280px;display:flex;align-items:center}
+        .magazine-cover::before{content:'';position:absolute;top:-50%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(59,130,246,.06),transparent 70%);pointer-events:none}
+        .magazine-cover .cover-content{position:relative;z-index:2;flex:1}
+        .magazine-cover .cover-badge{font-size:.6rem;text-transform:uppercase;letter-spacing:.15em;color:#d4a574;font-weight:600;margin-bottom:.5rem}
+        .magazine-cover .cover-title{font-family:'Playfair Display','Times New Roman',serif;font-size:3rem;font-weight:800;line-height:1.1;margin-bottom:.3rem;letter-spacing:-.02em}
+        .magazine-cover .cover-title .highlight{color:#d4a574;font-style:italic}
+        .magazine-cover .cover-subtitle{font-size:1.1rem;font-weight:300;color:rgba(255,255,255,.7);font-family:'Source Serif Pro','Georgia',serif;font-style:italic}
+        .magazine-cover .cover-meta{display:flex;gap:2rem;margin-top:1.2rem;font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.5);flex-wrap:wrap}
+        .magazine-cover .cover-meta span i{margin-right:.4rem;color:#d4a574}
+        .cover-photo{position:relative;z-index:2;margin-left:2rem;flex-shrink:0}
+        .cover-photo img{width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid #d4a574;box-shadow:0 8px 40px rgba(0,0,0,.3)}
+        .magazine-body{padding:2.5rem 3rem}
+        .pull-quote{font-family:'Playfair Display','Times New Roman',serif;font-size:1.2rem;font-style:italic;color:#0f172a;border-left:4px solid #d4a574;padding-left:1.5rem;margin:1.5rem 0;line-height:1.6;background:#f8fafc;padding:1.2rem 1.8rem;border-radius:0 12px 12px 0}
+        .pull-quote .attribution{display:block;font-family:'Inter',-apple-system,sans-serif;font-size:.7rem;font-style:normal;font-weight:600;color:#64748b;margin-top:.3rem;text-transform:uppercase;letter-spacing:.05em}
+        .section-title-mag{font-family:'Playfair Display','Times New Roman',serif;font-size:1.4rem;font-weight:700;color:#0f172a;margin-bottom:1.2rem;letter-spacing:-.01em;border-bottom:2px solid #f5e6d3;padding-bottom:.4rem;display:inline-block}
+        .section-title-mag i{color:#d4a574;margin-right:.5rem;font-size:1rem}
+        .editorial-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+        .mag-timeline-item{padding-bottom:1.2rem;margin-bottom:1.2rem;border-bottom:1px solid #e2e8f0}
+        .mag-timeline-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+        .mag-timeline-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.4rem;margin-bottom:.2rem}
+        .mag-timeline-title{font-weight:700;font-size:1rem;color:#0f172a}
+        .mag-timeline-sub{font-size:.8rem;color:#64748b;font-weight:400}
+        .mag-timeline-date{font-size:.65rem;font-weight:600;color:#3b82f6;background:rgba(59,130,246,.06);padding:.15rem .7rem;border-radius:20px;white-space:nowrap}
+        .mag-timeline-desc{font-family:'Source Serif Pro','Georgia',serif;font-size:.85rem;color:#334155;line-height:1.6}
+        .mag-timeline-desc ul{padding-left:1.2rem;margin:.1rem 0}
+        .mag-timeline-desc li{margin-bottom:.1rem}
+        .mag-skill-group{margin-bottom:.8rem}
+        .mag-skill-group .label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:#64748b;display:block;margin-bottom:.2rem}
+        .mag-skill-group .tags{display:flex;flex-wrap:wrap;gap:.3rem}
+        .mag-tag{background:#f8fafc;border:1px solid #e2e8f0;padding:.15rem .7rem;border-radius:20px;font-size:.7rem;font-weight:500;color:#334155;transition:all .3s ease}
+        .mag-tag:hover{border-color:#3b82f6;color:#3b82f6}
+        .mag-project{padding:.8rem 1rem;border-left:3px solid #f5e6d3;margin-bottom:1rem;transition:all .3s ease}
+        .mag-project:hover{border-left-color:#d4a574;background:#f8fafc;border-radius:0 12px 12px 0}
+        .mag-project:last-child{margin-bottom:0}
+        .mag-project .title{font-weight:700;font-size:.95rem;color:#0f172a}
+        .mag-project .sub{font-size:.75rem;color:#64748b;font-weight:400}
+        .mag-project .desc{font-family:'Source Serif Pro','Georgia',serif;font-size:.8rem;color:#334155;line-height:1.5;margin-top:.2rem}
+        .mag-project .techs{margin-top:.3rem}
+        .mag-project .techs .mag-tag{font-size:.6rem}
+        .mag-project .link{display:inline-block;font-size:.7rem;font-weight:600;color:#3b82f6;text-decoration:none;margin-top:.3rem;transition:all .3s ease}
+        .mag-project .link:hover{color:#0f172a;transform:translateX(4px)}
+        .mag-contact{display:flex;gap:1rem;flex-wrap:wrap;margin-top:.5rem}
+        .mag-contact a{color:#334155;text-decoration:none;font-size:.8rem;transition:all .3s ease;display:inline-flex;align-items:center;gap:.4rem}
+        .mag-contact a:hover{color:#3b82f6}
+        .print-contact-table{display:none;width:100%;border-collapse:collapse;margin-top:.8rem;font-size:.8rem}
+        .print-contact-table td{padding:.4rem .6rem;border-bottom:1px solid #e2e8f0;color:#0f172a}
+        .print-contact-table .label{font-weight:600;color:#0f172a;width:40%}
+        .print-contact-table .value{color:#334155}
+        .btn-pdf-mag{background:#0f172a;border:none;border-radius:30px;padding:.5rem 1.5rem;font-weight:600;font-size:.75rem;color:#fff;transition:all .3s ease;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;font-family:'Inter',-apple-system,sans-serif;border:1px solid transparent}
+        .btn-pdf-mag:hover{background:#1e293b;transform:translateY(-2px);box-shadow:0 8px 20px rgba(15,23,42,.15);color:#fff}
+        .btn-outline-mag{background:transparent;border:1px solid #e2e8f0;border-radius:30px;padding:.5rem 1.5rem;font-weight:500;font-size:.75rem;color:#334155;transition:all .3s ease;cursor:pointer;font-family:'Inter',-apple-system,sans-serif}
+        .btn-outline-mag:hover{border-color:#0f172a;color:#0f172a;background:#f8fafc}
+        .mag-footer{background:#0f172a;color:rgba(255,255,255,.4);text-align:center;padding:1.5rem;font-size:.7rem;letter-spacing:.05em}
+        .mag-footer a{color:#d4a574;text-decoration:none}
+        .print-only{display:none!important}
+        @media(max-width:992px){.magazine-cover{flex-direction:column-reverse;text-align:center;padding:2rem 1.5rem}.cover-photo{margin-left:0;margin-bottom:1rem}.cover-photo img{width:120px;height:120px}.magazine-cover .cover-title{font-size:2.2rem}.editorial-grid{grid-template-columns:1fr;gap:1.5rem}.magazine-body{padding:1.5rem}.magazine-cover .cover-meta{justify-content:center}}
+        @media(max-width:576px){body{padding:12px}.magazine-cover .cover-title{font-size:1.8rem}.magazine-cover{padding:1.5rem 1rem;min-height:auto}.magazine-body{padding:1rem}.cover-photo img{width:100px;height:100px}.pull-quote{font-size:1rem;padding:.8rem 1.2rem}.mag-timeline-header{flex-direction:column}.mag-timeline-date{white-space:normal}}
+        @media print{body{background:#fff!important;padding:0!important;opacity:1!important}.cv-container{border-radius:0!important;box-shadow:none!important;border:none!important}.magazine-cover{background:#0f172a!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;padding:2rem 2.5rem!important}.magazine-cover .cover-title{color:#fff!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}.magazine-cover .cover-subtitle{color:rgba(255,255,255,.7)!important}.magazine-cover .cover-meta{color:rgba(255,255,255,.5)!important}.magazine-cover .cover-badge{color:#d4a574!important}.cover-photo img{border-color:#d4a574!important}.pull-quote{background:#f8fafc!important;border-left-color:#d4a574!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}.btn-pdf-mag,.btn-outline-mag,.no-print{display:none!important}.print-only{display:block!important}.print-contact-table{display:table!important}.mag-contact{display:none!important}.mag-tag{border:1px solid #ccc!important;background:#f5f5f5!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}.section-title-mag{border-bottom-color:#d4a574!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}.mag-project{border-left-color:#d4a574!important}.mag-project:hover{background:transparent!important}.mag-timeline-date{background:rgba(59,130,246,.06)!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}.mag-skill-group .label{color:#0f172a!important}.mag-footer{background:#0f172a!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}.mag-footer a{color:#d4a574!important}.magazine-body{padding:1.5rem 2.5rem!important}.mag-timeline-desc{font-size:.8rem!important}.mag-timeline-title{font-size:.95rem!important}.mag-project .title{font-size:.9rem!important}.mag-project .desc{font-size:.75rem!important}.section-title-mag{font-size:1.2rem!important}.print-contact-table td{padding:.3rem .5rem!important;border-bottom:1px solid #ddd!important;font-size:.75rem!important}.print-contact-table .label{font-weight:600!important;width:35%!important}}
     </style>
 </head>
 <body>
-
     <div class="cv-container">
-
-        <!-- ==========================================================
-        MAGAZINE COVER
-        ========================================================== -->
         <header class="magazine-cover">
             <div class="cover-content">
-                <h1 class="cover-title">
-                    Jesús Armando<br />
-                    <span class="highlight">Hernandez Acuña</span>
-                </h1>
+                <h1 class="cover-title">Jesús Armando<br /><span class="highlight">Hernandez Acuña</span></h1>
                 <p class="cover-subtitle">Economista · Desarrollador Python · Analista de Datos</p>
                 <div class="cover-meta">
                     <span><i class="fas fa-briefcase"></i> 4+ años programando</span>
@@ -702,31 +91,14 @@
                 <img src="https://i.ibb.co/LXdPt9g0/imagen.jpg" alt="Jesús Armando Hernandez Acuña" />
             </div>
         </header>
-
-        <!-- ==========================================================
-        MAGAZINE BODY
-        ========================================================== -->
         <div class="magazine-body">
-
-            <!-- FILA 1: PERFIL + HABILIDADES -->
             <div class="editorial-grid">
-
-                <!-- Columna Izquierda: Perfil -->
                 <div>
                     <h2 class="section-title-mag"><i class="fas fa-user-edit"></i> Perfil Profesional</h2>
-
-                    <p style="font-family:var(--font-serif-body); font-size:0.92rem; line-height:1.8; color:var(--text-secondary); text-align:justify;">
-                        Economista en formación con <strong style="color:var(--accent-primary);">4+ años de experiencia en programación</strong> y análisis de datos. Especializado en el desarrollo de plataformas web para <strong style="color:var(--accent-primary);">monitoreo económico</strong>, análisis legislativo y visualización de datos públicos.
-                    </p>
-
-                    <p style="font-family:var(--font-serif-body); font-size:0.92rem; line-height:1.8; color:var(--text-secondary); margin-top:0.8rem; text-align:justify;">
-                        Apasionado por la intersección entre <strong style="color:var(--accent-primary);">tecnología y economía</strong>, con experiencia en el sector público (SEDENA, Cámara de Diputados) y en el desarrollo de herramientas digitales para la toma de decisiones estratégicas.
-                    </p>
-
-                    
-
-                    <div style="margin-top:1.2rem;">
-                        <span style="font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; color:var(--text-muted); display:block; margin-bottom:0.3rem;">Áreas de conocimiento</span>
+                    <p style="font-family:'Source Serif Pro','Georgia',serif;font-size:.92rem;line-height:1.8;color:#334155;text-align:justify;">Economista en formación con <strong style="color:#0f172a;">4+ años de experiencia en programación</strong> y análisis de datos. Especializado en el desarrollo de plataformas web para <strong style="color:#0f172a;">monitoreo económico</strong>, análisis legislativo y visualización de datos públicos.</p>
+                    <p style="font-family:'Source Serif Pro','Georgia',serif;font-size:.92rem;line-height:1.8;color:#334155;margin-top:.8rem;text-align:justify;">Apasionado por la intersección entre <strong style="color:#0f172a;">tecnología y economía</strong>, con experiencia en el sector público (SEDENA, Cámara de Diputados) y en el desarrollo de herramientas digitales para la toma de decisiones estratégicas.</p>
+                    <!--div class="pull-quote" style="margin-top:1.2rem;">"La tecnología no reemplaza al economista, lo potencia. El análisis de datos es el nuevo lenguaje de las finanzas públicas."<span class="attribution">— Jesús Armando Hernandez Acuña</span></div-->
+                    <div style="margin-top:1.2rem;"><span style="font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:#64748b;display:block;margin-bottom:.3rem;">Áreas de conocimiento</span>
                         <span class="mag-tag">Análisis de Datos</span>
                         <span class="mag-tag">Econometría</span>
                         <span class="mag-tag">Visualización</span>
@@ -735,388 +107,167 @@
                         <span class="mag-tag">Políticas Económicas</span>
                     </div>
                 </div>
-
-                <!-- Columna Derecha: Habilidades + Idiomas + Contacto -->
                 <div>
                     <h2 class="section-title-mag"><i class="fas fa-microchip"></i> Stack Técnico</h2>
-
-                    <div class="mag-skill-group">
-                        <span class="label">Lenguajes</span>
-                        <div class="tags">
-                            <span class="mag-tag">Python</span>
-                            <span class="mag-tag">SQL</span>
-                            <span class="mag-tag">HTML/CSS</span>
-                            <span class="mag-tag">JavaScript</span>
+                    <div class="mag-skill-group"><span class="label">Lenguajes</span><div class="tags"><span class="mag-tag">Python</span><span class="mag-tag">SQL</span><span class="mag-tag">HTML/CSS</span><span class="mag-tag">JavaScript</span></div></div>
+                    <div class="mag-skill-group"><span class="label">Frameworks & Librerías</span><div class="tags"><span class="mag-tag">Django</span><span class="mag-tag">Pandas</span><span class="mag-tag">NumPy</span><span class="mag-tag">Matplotlib</span><span class="mag-tag">Plotly</span></div></div>
+                    <div class="mag-skill-group"><span class="label">Herramientas</span><div class="tags"><span class="mag-tag">Git</span><span class="mag-tag">Excel</span><span class="mag-tag">DataTables</span><span class="mag-tag">Chart.js</span><span class="mag-tag">REST API</span></div></div>
+                    <hr style="border-color:#e2e8f0;margin:1.2rem 0;" />
+                    <div style="display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:1.2rem;">
+                        <div><span style="font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:#64748b;display:block;">Idiomas</span>
+                            <span style="display:block;font-weight:600;color:#0f172a;">Español</span>
+                            <span style="font-size:.8rem;color:#64748b;">Nativo</span>
+                            <span style="display:block;font-weight:600;color:#0f172a;margin-top:.2rem;">Inglés</span>
+                            <span style="font-size:.8rem;color:#64748b;">Básico (Lectura técnica)</span>
                         </div>
-                    </div>
-
-                    <div class="mag-skill-group">
-                        <span class="label">Frameworks & Librerías</span>
-                        <div class="tags">
-                            <span class="mag-tag">Django</span>
-                            <span class="mag-tag">Pandas</span>
-                            <span class="mag-tag">NumPy</span>
-                            <span class="mag-tag">Matplotlib</span>
-                            <span class="mag-tag">Plotly</span>
-                        </div>
-                    </div>
-
-                    <div class="mag-skill-group">
-                        <span class="label">Herramientas</span>
-                        <div class="tags">
-                            <span class="mag-tag">Git</span>
-                            <span class="mag-tag">Excel</span>
-                            <span class="mag-tag">DataTables</span>
-                            <span class="mag-tag">Chart.js</span>
-                            <span class="mag-tag">REST API</span>
-                        </div>
-                    </div>
-
-                    <hr style="border-color:var(--border-color); margin:1.2rem 0;" />
-
-                    <div style="display:flex; gap:2rem; flex-wrap:wrap; margin-bottom:1.2rem;">
-                        <div>
-                            <span style="font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; color:var(--text-muted); display:block;">Idiomas</span>
-                            <span style="display:block; font-weight:600; color:var(--accent-primary);">Español</span>
-                            <span style="font-size:0.8rem; color:var(--text-muted);">Nativo</span>
-                            <span style="display:block; font-weight:600; color:var(--accent-primary); margin-top:0.2rem;">Inglés</span>
-                            <span style="font-size:0.8rem; color:var(--text-muted);">Básico (Lectura técnica)</span>
-                        </div>
-                        <div>
-                            <span style="font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; color:var(--text-muted); display:block;">Contacto</span>
+                        <div><span style="font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:#64748b;display:block;">Contacto</span>
                             <div class="mag-contact no-print">
                                 <a href="mailto:hernandezacunaarmando@gmail.com"><i class="fas fa-envelope"></i> Email</a>
                                 <a href="https://wa.me/525517726616"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                                 <a href="https://github.com/armandoDev-10"><i class="fab fa-github"></i> GitHub</a>
                                 <a href="https://armandodev-10.github.io/cuaderno"><i class="fas fa-laptop-code"></i> Portafolio</a>
                             </div>
-
-                            <!-- Tabla de contacto para impresión -->
                             <table class="print-contact-table print-only">
-                                <tr>
-                                    <td class="label"><i class="fas fa-envelope"></i> Correo</td>
-                                    <td class="value">hernandezacunaarmando@gmail.com</td>
-                                </tr>
-                                <tr>
-                                    <td class="label"><i class="fas fa-phone"></i> Teléfono</td>
-                                    <td class="value">+52 55 1772 6616</td>
-                                </tr>
-                                <tr>
-                                    <td class="label"><i class="fab fa-github"></i> GitHub</td>
-                                    <td class="value">github.com/armandoDev-10</td>
-                                </tr>
-                                <tr>
-                                    <td class="label"><i class="fas fa-map-marker-alt"></i> Ubicación</td>
-                                    <td class="value">Ciudad de México, México</td>
-                                </tr>
+                                <tr><td class="label"><i class="fas fa-envelope"></i> Correo</td><td class="value">hernandezacunaarmando@gmail.com</td></tr>
+                                <tr><td class="label"><i class="fas fa-phone"></i> Teléfono</td><td class="value">+52 55 1772 6616</td></tr>
+                                <tr><td class="label"><i class="fab fa-github"></i> GitHub</td><td class="value">github.com/armandoDev-10</td></tr>
+                                <tr><td class="label"><i class="fas fa-map-marker-alt"></i> Ubicación</td><td class="value">Ciudad de México, México</td></tr>
                             </table>
                         </div>
                     </div>
-
-                    <div style="display:flex; gap:0.6rem; flex-wrap:wrap;" class="no-print">
+                    <div style="display:flex;gap:.6rem;flex-wrap:wrap;" class="no-print">
                         <button class="btn-pdf-mag" id="pdfBtnMag"><i class="fas fa-file-pdf"></i> Descargar PDF</button>
-                        <button class="btn-outline-mag" onclick="document.getElementById('experiencia-mag').scrollIntoView({behavior:'smooth'})">
-                            <i class="fas fa-arrow-down"></i> Ver experiencia
-                        </button>
+                        <button class="btn-outline-mag" onclick="document.getElementById('experiencia-mag').scrollIntoView({behavior:'smooth'})"><i class="fas fa-arrow-down"></i> Ver experiencia</button>
                     </div>
                 </div>
             </div>
-
-            <hr style="border-color:var(--border-color); margin:2rem 0;" />
-
-            <!-- FILA 2: EDUCACIÓN + CERTIFICACIONES -->
+            <hr style="border-color:#e2e8f0;margin:2rem 0;" />
             <div class="editorial-grid">
-
                 <div>
                     <h2 class="section-title-mag"><i class="fas fa-graduation-cap"></i> Formación Académica</h2>
-
                     <div class="mag-timeline-item">
                         <div class="mag-timeline-header">
-                            <div>
-                                <div class="mag-timeline-title">Licenciatura en Economía</div>
-                                <div class="mag-timeline-sub">Escuela Superior de Economía · IPN</div>
-                            </div>
+                            <div><div class="mag-timeline-title">Licenciatura en Economía</div><div class="mag-timeline-sub">Escuela Superior de Economía · IPN</div></div>
                             <span class="mag-timeline-date">2016 – 2026</span>
                         </div>
-                        <div class="mag-timeline-desc" style="font-size:0.8rem;">
-                            <strong>Periodos:</strong> Agosto 2016 - Diciembre 2020 (7° semestre) · Agosto 2024 - Julio 2026 (9° semestre en curso)
-                            <br /><strong>Enfoque:</strong> Análisis de datos, econometría, políticas económicas y programación para economistas.
-                        </div>
+                        <div class="mag-timeline-desc" style="font-size:.8rem;"><strong>Periodos:</strong> Agosto 2016 - Diciembre 2020 (7° semestre) · Agosto 2024 - Julio 2026 (9° semestre en curso)<br /><strong>Enfoque:</strong> Análisis de datos, econometría, políticas económicas y programación para economistas.</div>
                     </div>
-
-                    <div class="mag-timeline-item" style="border-bottom:none; padding-bottom:0; margin-bottom:0;">
+                    <div class="mag-timeline-item" style="border-bottom:none;padding-bottom:0;margin-bottom:0;">
                         <div class="mag-timeline-header">
-                            <div>
-                                <div class="mag-timeline-title">Educación Media Superior</div>
-                                <div class="mag-timeline-sub">Instituto "José María Morelos y Pavón"</div>
-                            </div>
+                            <div><div class="mag-timeline-title">Educación Media Superior</div><div class="mag-timeline-sub">Instituto "José María Morelos y Pavón"</div></div>
                             <span class="mag-timeline-date">2013 – 2016</span>
                         </div>
                     </div>
                 </div>
-
                 <div>
                     <h2 class="section-title-mag"><i class="fas fa-certificate"></i> Certificaciones</h2>
-
-                    <!-- PILARES - Escuela de Código -->
                     <div class="mag-timeline-item">
                         <div class="mag-timeline-header">
-                            <div>
-                                <div class="mag-timeline-title">Escuela de Código · PILARES</div>
-                                <div class="mag-timeline-sub">Secretaría de Educación, Ciencia, Tecnología e Innovación CDMX</div>
-                            </div>
+                            <div><div class="mag-timeline-title">Escuela de Código · PILARES</div><div class="mag-timeline-sub">Secretaría de Educación, Ciencia, Tecnología e Innovación CDMX</div></div>
                             <span class="mag-timeline-date">Diciembre 2022</span>
                         </div>
-                        <div class="mag-timeline-desc" style="font-size:0.8rem;">
-                            <strong>100 horas totales</strong> · Tronco común completo
-                            <ul style="margin-top:0.2rem;">
-                                <li>Pensamiento Computacional — 30 horas</li>
-                                <li>Desarrollo de Páginas Web — 40 horas</li>
-                                <li>Base de Datos — 30 horas</li>
-                            </ul>
-                        </div>
+                        <div class="mag-timeline-desc" style="font-size:.8rem;"><strong>100 horas totales</strong> · Tronco común completo<ul style="margin-top:.2rem;"><li>Pensamiento Computacional — 30 horas</li><li>Desarrollo de Páginas Web — 40 horas</li><li>Base de Datos — 30 horas</li></ul></div>
                     </div>
-
-                    <!-- META -->
                     <div class="mag-timeline-item">
                         <div class="mag-timeline-header">
-                            <div>
-                                <div class="mag-timeline-title">Competencias en Programación con Python</div>
-                                <div class="mag-timeline-sub">META (Facebook)</div>
-                            </div>
+                            <div><div class="mag-timeline-title">Competencias en Programación con Python</div><div class="mag-timeline-sub">META (Facebook)</div></div>
                             <span class="mag-timeline-date">Agosto 2023</span>
                         </div>
-                        <div class="mag-timeline-desc" style="font-size:0.8rem;">Fundamentos de programación Python, estructuras de datos y algoritmos básicos.</div>
+                        <div class="mag-timeline-desc" style="font-size:.8rem;">Fundamentos de programación Python, estructuras de datos y algoritmos básicos.</div>
                     </div>
-
-                    <!-- PILARES Taller -->
-                    <div class="mag-timeline-item" style="border-bottom:none; padding-bottom:0; margin-bottom:0;">
+                    <div class="mag-timeline-item" style="border-bottom:none;padding-bottom:0;margin-bottom:0;">
                         <div class="mag-timeline-header">
-                            <div>
-                                <div class="mag-timeline-title">Taller de Python para Análisis de Datos</div>
-                                <div class="mag-timeline-sub">Escuela de Código PILARES CDMX</div>
-                            </div>
+                            <div><div class="mag-timeline-title">Taller de Python para Análisis de Datos</div><div class="mag-timeline-sub">Escuela de Código PILARES CDMX</div></div>
                             <span class="mag-timeline-date">Julio 2023</span>
                         </div>
-                        <div class="mag-timeline-desc" style="font-size:0.8rem;">Uso de Python para análisis y visualización de datos con Pandas y Matplotlib.</div>
+                        <div class="mag-timeline-desc" style="font-size:.8rem;">Uso de Python para análisis y visualización de datos con Pandas y Matplotlib.</div>
                     </div>
                 </div>
             </div>
-
-            <hr style="border-color:var(--border-color); margin:2rem 0;" />
-
-            <!-- FILA 3: EXPERIENCIA + PROYECTOS -->
+            <hr style="border-color:#e2e8f0;margin:2rem 0;" />
             <div id="experiencia-mag">
-
-                <h2 class="section-title-mag" style="display:block; width:100%;"><i class="fas fa-briefcase"></i> Experiencia Profesional</h2>
-
+                <h2 class="section-title-mag" style="display:block;width:100%;"><i class="fas fa-briefcase"></i> Experiencia Profesional</h2>
                 <div class="editorial-grid">
-
-                    <!-- Columna Izquierda: Experiencia -->
                     <div>
-
-                        <!-- SEDENA -->
                         <div class="mag-timeline-item">
                             <div class="mag-timeline-header">
-                                <div>
-                                    <div class="mag-timeline-title">SEDENA</div>
-                                    <div class="mag-timeline-sub">Desarrollador Web · Proyectos de Inversión</div>
-                                </div>
+                                <div><div class="mag-timeline-title">SEDENA</div><div class="mag-timeline-sub">Desarrollador Web · Proyectos de Inversión</div></div>
                                 <span class="mag-timeline-date">Abr–May 2023</span>
                             </div>
-                            <div class="mag-timeline-desc">
-                                <ul>
-                                    <li>Desarrollé aplicación web con Django para gestión de proyectos activos y en planeación.</li>
-                                    <li>Implementé sistema de seguimiento y control documental que optimizó procesos.</li>
-                                    <li><strong>Stack:</strong> Python, Django, HTML/CSS, SQLite.</li>
-                                </ul>
-                            </div>
+                            <div class="mag-timeline-desc"><ul><li>Desarrollé aplicación web con Django para gestión de proyectos activos y en planeación.</li><li>Implementé sistema de seguimiento y control documental que optimizó procesos.</li><li><strong>Stack:</strong> Python, Django, HTML/CSS, SQLite.</li></ul></div>
                         </div>
-
-                        <!-- Alcaldía Tláhuac -->
                         <div class="mag-timeline-item">
                             <div class="mag-timeline-header">
-                                <div>
-                                    <div class="mag-timeline-title">Alcaldía Tláhuac</div>
-                                    <div class="mag-timeline-sub">Asistente Administrativo</div>
-                                </div>
+                                <div><div class="mag-timeline-title">Alcaldía Tláhuac</div><div class="mag-timeline-sub">Asistente Administrativo</div></div>
                                 <span class="mag-timeline-date">Nov 2022 – Ene 2023</span>
                             </div>
-                            <div class="mag-timeline-desc">
-                                <ul>
-                                    <li>Gestión de documentos administrativos y digitalización de archivos.</li>
-                                    <li>Apoyo en programas de empleo temporal y seguimiento de beneficiarios.</li>
-                                </ul>
-                            </div>
+                            <div class="mag-timeline-desc"><ul><li>Gestión de documentos administrativos y digitalización de archivos.</li><li>Apoyo en programas de empleo temporal y seguimiento de beneficiarios.</li></ul></div>
                         </div>
-
-                        <!-- Cámara de Diputados -->
-                        <div class="mag-timeline-item" style="border-bottom:none; padding-bottom:0; margin-bottom:0;">
+                        <div class="mag-timeline-item" style="border-bottom:none;padding-bottom:0;margin-bottom:0;">
                             <div class="mag-timeline-header">
-                                <div>
-                                    <div class="mag-timeline-title">H. Cámara de Diputados</div>
-                                    <div class="mag-timeline-sub">Comisión de Economía Social y Fomento del Cooperativismo</div>
-                                </div>
+                                <div><div class="mag-timeline-title">H. Cámara de Diputados</div><div class="mag-timeline-sub">Comisión de Economía Social y Fomento del Cooperativismo</div></div>
                                 <span class="mag-timeline-date">Mar–Sep 2026</span>
                             </div>
-                            <div class="mag-timeline-desc">
-                                <ul>
-                                    <li>Monitoreo económico y generación de reportes de indicadores.</li>
-                                    <li>Automatización de consultas con técnicas desarrolladas en Python.</li>
-                                    <li>Desarrollo de plataformas web: T-MEC.info, Metodika.dev, Gantt.</li>
-                                    <li>Monitoreo legislativo y reportes de sesiones.</li>
-                                </ul>
-                            </div>
+                            <div class="mag-timeline-desc"><ul><li>Monitoreo económico y generación de reportes de indicadores.</li><li>Automatización de consultas con técnicas desarrolladas en Python.</li><li>Desarrollo de plataformas web: T-MEC.info, Metodika.dev, Gantt.</li><li>Monitoreo legislativo y reportes de sesiones.</li></ul></div>
                         </div>
                     </div>
-
-                    <!-- Columna Derecha: Proyectos -->
                     <div>
-
                         <h2 class="section-title-mag" style="font-size:1.2rem;"><i class="fas fa-rocket"></i> Proyectos</h2>
-
-                        <!-- PEF 2025 -->
                         <div class="mag-project">
                             <div class="d-flex justify-content-between align-items-start flex-wrap">
-                                <div>
-                                    <span class="title">Análisis PEF 2025</span>
-                                    <span class="sub"> · Visualización del Presupuesto Federal</span>
-                                </div>
-                                <span class="mag-timeline-date" style="background:rgba(59,130,246,0.06);">Actualidad</span>
+                                <div><span class="title">Análisis PEF 2025</span><span class="sub"> · Visualización del Presupuesto Federal</span></div>
+                                <span class="mag-timeline-date" style="background:rgba(59,130,246,.06);">Actualidad</span>
                             </div>
-                            <div class="desc">
-                                Dashboard interactivo con gráficos Plotly y tablas DataTables. Filtrado por dependencia, programa y categoría económica.
-                            </div>
-                            <div class="techs">
-                                <span class="mag-tag">Python</span>
-                                <span class="mag-tag">Django</span>
-                                <span class="mag-tag">Plotly</span>
-                                <span class="mag-tag">DataTables</span>
-                            </div>
+                            <div class="desc">Dashboard interactivo con gráficos Plotly y tablas DataTables. Filtrado por dependencia, programa y categoría económica.</div>
+                            <div class="techs"><span class="mag-tag">Python</span><span class="mag-tag">Django</span><span class="mag-tag">Plotly</span><span class="mag-tag">DataTables</span></div>
                             <a href="https://armandodev-10.github.io/pef2025_info" target="_blank" class="link no-print">Ver proyecto <i class="fas fa-arrow-right"></i></a>
-                            <div class="print-only" style="font-size:0.7rem; margin-top:0.1rem;">armandodev-10.github.io/pef2025_info</div>
+                            <div class="print-only" style="font-size:.7rem;margin-top:.1rem;">armandodev-10.github.io/pef2025_info</div>
                         </div>
-
-                        <!-- Metodika -->
                         <div class="mag-project">
                             <div class="d-flex justify-content-between align-items-start flex-wrap">
-                                <div>
-                                    <span class="title">Metodika.dev</span>
-                                    <span class="sub"> · Gestión de Investigación</span>
-                                </div>
-                                <span class="mag-timeline-date" style="background:rgba(59,130,246,0.06);">Actualidad</span>
+                                <div><span class="title">Metodika.dev</span><span class="sub"> · Gestión de Investigación</span></div>
+                                <span class="mag-timeline-date" style="background:rgba(59,130,246,.06);">Actualidad</span>
                             </div>
-                            <div class="desc">
-                                Gestión de temas, fuentes, notas y matriz de hallazgos. Exportación a PDF, Markdown e integración con Google Drive.
-                            </div>
-                            <div class="techs">
-                                <span class="mag-tag">Django</span>
-                                <span class="mag-tag">SQLite</span>
-                                <span class="mag-tag">Markdown</span>
-                                <span class="mag-tag">Drive API</span>
-                            </div>
+                            <div class="desc">Gestión de temas, fuentes, notas y matriz de hallazgos. Exportación a PDF, Markdown e integración con Google Drive.</div>
+                            <div class="techs"><span class="mag-tag">Django</span><span class="mag-tag">SQLite</span><span class="mag-tag">Markdown</span><span class="mag-tag">Drive API</span></div>
                             <a href="https://www.metodika.dev" target="_blank" class="link no-print">Visitar <i class="fas fa-arrow-right"></i></a>
-                            <div class="print-only" style="font-size:0.7rem; margin-top:0.1rem;">metodika.dev</div>
+                            <div class="print-only" style="font-size:.7rem;margin-top:.1rem;">metodika.dev</div>
                         </div>
-
-                        <!-- T-MEC -->
                         <div class="mag-project">
                             <div class="d-flex justify-content-between align-items-start flex-wrap">
-                                <div>
-                                    <span class="title">T-MEC.info</span>
-                                    <span class="sub"> · Portal de Análisis Económico</span>
-                                </div>
-                                <span class="mag-timeline-date" style="background:rgba(59,130,246,0.06);">Actualidad</span>
+                                <div><span class="title">T-MEC.info</span><span class="sub"> · Portal de Análisis Económico</span></div>
+                                <span class="mag-timeline-date" style="background:rgba(59,130,246,.06);">Actualidad</span>
                             </div>
-                            <div class="desc">
-                                Visualización de datos económicos e indicadores del T-MEC. Gráficos interactivos con Chart.js y análisis sectorial.
-                            </div>
-                            <div class="techs">
-                                <span class="mag-tag">Python</span>
-                                <span class="mag-tag">Pandas</span>
-                                <span class="mag-tag">Chart.js</span>
-                                <span class="mag-tag">Tailwind</span>
-                            </div>
+                            <div class="desc">Visualización de datos económicos e indicadores del T-MEC. Gráficos interactivos con Chart.js y análisis sectorial.</div>
+                            <div class="techs"><span class="mag-tag">Python</span><span class="mag-tag">Pandas</span><span class="mag-tag">Chart.js</span><span class="mag-tag">Tailwind</span></div>
                             <a href="https://www.t-mec.info" target="_blank" class="link no-print">Visitar <i class="fas fa-arrow-right"></i></a>
-                            <div class="print-only" style="font-size:0.7rem; margin-top:0.1rem;">t-mec.info</div>
+                            <div class="print-only" style="font-size:.7rem;margin-top:.1rem;">t-mec.info</div>
                         </div>
-
-                        <!-- Gantt -->
-                        <div class="mag-project" style="border-left-color:var(--accent-secondary); margin-bottom:0;">
+                        <div class="mag-project" style="border-left-color:#3b82f6;margin-bottom:0;">
                             <div class="d-flex justify-content-between align-items-start flex-wrap">
-                                <div>
-                                    <span class="title">Gantt Interactivo</span>
-                                    <span class="sub"> · Gestión de Proyectos</span>
-                                </div>
-                                <span class="mag-timeline-date" style="background:rgba(59,130,246,0.06);">Actualidad</span>
+                                <div><span class="title">Gantt Interactivo</span><span class="sub"> · Gestión de Proyectos</span></div>
+                                <span class="mag-timeline-date" style="background:rgba(59,130,246,.06);">Actualidad</span>
                             </div>
-                            <div class="desc">
-                                Diagrama de Gantt con escala ajustable, exportación a PDF, gestión de múltiples proyectos y personalización visual.
-                            </div>
-                            <div class="techs">
-                                <span class="mag-tag">JavaScript</span>
-                                <span class="mag-tag">SVG</span>
-                                <span class="mag-tag">localStorage</span>
-                                <span class="mag-tag">jsPDF</span>
-                            </div>
+                            <div class="desc">Diagrama de Gantt con escala ajustable, exportación a PDF, gestión de múltiples proyectos y personalización visual.</div>
+                            <div class="techs"><span class="mag-tag">JavaScript</span><span class="mag-tag">SVG</span><span class="mag-tag">localStorage</span><span class="mag-tag">jsPDF</span></div>
                             <a href="https://armandodev-98.github.io/gantt" target="_blank" class="link no-print">Ver Gantt <i class="fas fa-arrow-right"></i></a>
-                            <div class="print-only" style="font-size:0.7rem; margin-top:0.1rem;">armandodev-98.github.io/gantt</div>
+                            <div class="print-only" style="font-size:.7rem;margin-top:.1rem;">armandodev-98.github.io/gantt</div>
                         </div>
-
-                        <!-- GitHub -->
-                        <div class="no-print" style="margin-top:1rem; text-align:center;">
-                            <p style="color:var(--text-muted); font-size:0.75rem;">Más proyectos en GitHub</p>
-                            <a href="https://armandodev-10.github.io/cuaderno/" target="_blank" style="color:var(--accent-secondary); text-decoration:none; font-weight:600; font-size:0.8rem;">
-                                <i class="fab fa-github"></i> github.com/armandoDev-10
-                            </a>
+                        <div class="no-print" style="margin-top:1rem;text-align:center;">
+                            <p style="color:#64748b;font-size:.75rem;">Más proyectos en GitHub</p>
+                            <a href="https://github.com/armandoDev-10" target="_blank" style="color:#3b82f6;text-decoration:none;font-weight:600;font-size:.8rem;"><i class="fab fa-github"></i> github.com/armandoDev-10</a>
                         </div>
-                        <div class="print-only" style="margin-top:0.3rem; font-size:0.75rem;">
-                            <strong>GitHub:</strong> https://github.com/armandoDev-10
-                        </div>
-
+                        <div class="print-only" style="margin-top:.3rem;font-size:.75rem;"><strong>GitHub:</strong> https://github.com/armandoDev-10</div>
                     </div>
                 </div>
             </div>
-
         </div>
-
-        <!-- ==========================================================
-        FOOTER
-        ========================================================== -->
         <div class="mag-footer">
             <p>© <span id="yearMag"></span> Jesús Armando Hernandez Acuña · CV</p>
         </div>
-
     </div>
-
-    <!-- ==========================================================
-    SCRIPTS
-    ========================================================== -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('yearMag').textContent = new Date().getFullYear();
-            document.body.classList.add('loaded');
-
-            const pdfBtn = document.getElementById('pdfBtnMag');
-            if (pdfBtn) {
-                pdfBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-
-                    // Mostrar elementos de impresión
-                    document.querySelectorAll('.print-only').forEach(el => el.style.display = 'block');
-                    document.querySelectorAll('.no-print').forEach(el => el.style.display = 'none');
-
-                    setTimeout(() => {
-                        window.print();
-                        setTimeout(() => {
-                            document.querySelectorAll('.print-only').forEach(el => el.style.display = 'none');
-                            document.querySelectorAll('.no-print').forEach(el => el.style.display = 'block');
-                        }, 500);
-                    }, 200);
-                });
-            }
-        });
+        document.addEventListener('DOMContentLoaded',function(){document.getElementById('yearMag').textContent=new Date().getFullYear();document.body.classList.add('loaded');var e=document.getElementById('pdfBtnMag');e&&e.addEventListener('click',function(e){e.preventDefault();document.querySelectorAll('.print-only').forEach(function(e){e.style.display='block'});document.querySelectorAll('.no-print').forEach(function(e){e.style.display='none'});setTimeout(function(){window.print();setTimeout(function(){document.querySelectorAll('.print-only').forEach(function(e){e.style.display='none'});document.querySelectorAll('.no-print').forEach(function(e){e.style.display='block'})},500)},200)})});
     </script>
-
 </body>
 </html>
